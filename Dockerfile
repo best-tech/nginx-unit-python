@@ -9,12 +9,14 @@ RUN  set -xe && \
 ADD unit.list /etc/apt/sources.list.d/
 
 RUN set -xe && \
-    apt-key add nginx_signing.key &&\
+    apt-key add nginx_signing.key && \
     apt-get -y update && \
     apt-get -y install  mc curl \
                         python3.6 \
                         unit \
                         unit-python3.6 \ 
                         python3-pip
+
+ADD unit /etc/init.d/unit
 
 CMD ["/usr/sbin/unitd", "--no-daemon", "--control", "0.0.0.0:8300"]
