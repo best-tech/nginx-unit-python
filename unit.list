@@ -1,0 +1,2 @@
+deb https://packages.nginx.org/unit/ubuntu/ artful unit
+deb-src https://packages.nginx.org/unit/ubuntu/ artful unit
