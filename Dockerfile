@@ -19,4 +19,8 @@ RUN set -xe && \
 
 ADD unit /etc/init.d/unit
 
-CMD ["/usr/sbin/unitd", "--no-daemon", "--control", "0.0.0.0:8300"]
+WORKDIR /www
+
+EXPOSE 8000 8080
+
+CMD ["/usr/sbin/unitd", "--no-daemon"]
